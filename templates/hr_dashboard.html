@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HR Dashboard - AI Resume System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 0;
+        }
+        .dashboard-container {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            width: 90%;
+            max-width: 1200px;
+            margin: 40px auto;
+        }
+        .dashboard-title {
+            text-align: center;
+            color: #2d3748;
+            margin-bottom: 30px;
+        }
+        .input-group {
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        .input-group-text {
+            background: transparent;
+            border: none;
+            padding: 12px 15px;
+        }
+        .form-control {
+            border: none;
+            padding: 12px;
+            box-shadow: none;
+        }
+        .form-control:focus {
+            border: none;
+            box-shadow: none;
+        }
+        .btn-upload {
+            background: linear-gradient(to right, #667eea, #764ba2);
+            border: none;
+            border-radius: 10px;
+            padding: 12px 25px;
+            color: white;
+            font-weight: 600;
+        }
+        .btn-upload:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102,126,234,0.4);
+        }
+        .results-table {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        .results-table th {
+            background: #f8f9fa;
+            border: none;
+        }
+        .results-table td {
+            vertical-align: middle;
+        }
+        .score-badge {
+            background: linear-gradient(to right, #667eea, #764ba2);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+        .logout-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #dc3545;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 10px;
+            text-decoration: none;
+        }
+        .logout-btn:hover {
+            background: #c82333;
+            color: white;
+        }
+        .alert {
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+                .ranking-info {
+                    background: #f8f9fa;
+                    padding: 20px;
+                    border-radius: 15px;
+                    margin-bottom: 30px;
+                    border-left: 4px solid #667eea;
+                }
+                .criteria-list {
+                    list-style: none;
+                    padding-left: 0;
+                    margin-bottom: 0;
+                }
+                .criteria-list li {
+                    margin-bottom: 8px;
+                    display: flex;
+                    align-items: center;
+                }
+                .criteria-list li i {
+                    color: #667eea;
+                    margin-right: 10px;
+                }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background: linear-gradient(to right, #667eea, #764ba2);">
+        <div class="container">
+            <a class="navbar-brand" href="#">JobSync</a>
+            <div class="d-flex align-items-center">
+                <span class="text-white me-3">Welcome, {{ session['username'] }}</span>
+                <a href="{{ url_for('logout') }}" class="btn btn-outline-light">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="dashboard-container">
+        <h2 class="dashboard-title">
+            <i class="fas fa-user-tie mb-4 d-block" style="font-size: 48px;"></i>
+            HR Dashboard
+        </h2>
+
+        {% if message %}
+        <div class="alert alert-info">
+            <i class="fas fa-info-circle me-2"></i>{{ message }}
+        </div>
+        {% endif %}
+
+        <form method="POST" enctype="multipart/form-data" class="mb-5" action="{{ url_for('rank_resumes_endpoint') }}">
+            <div class="row">
+                <div class="col-md-12 mb-4">
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="fas fa-briefcase"></i></span>
+                        <textarea name="job_description" class="form-control" placeholder="Enter job description..." rows="4" required></textarea>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="fas fa-file-upload"></i></span>
+                        <input type="file" name="resumes" class="form-control" multiple required accept=".pdf,.txt">
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-upload">
+                    <i class="fas fa-search me-2"></i>Analyze Resumes
+                </button>
+            </div>
+        </form>
+
+        {% if results %}
+        <div class="results-section">
+            <div class="ranking-info">
+                <h4 class="mb-3"><i class="fas fa-info-circle me-2"></i>How Rankings Are Calculated</h4>
+                <ul class="criteria-list">
+                    <li><i class="fas fa-check-circle"></i>Skills Match: Comparison between resume skills and job requirements</li>
+                    <li><i class="fas fa-check-circle"></i>Experience Level: Years of relevant experience in similar roles</li>
+                    <li><i class="fas fa-check-circle"></i>Education Alignment: Relevance of educational background</li>
+                    <li><i class="fas fa-check-circle"></i>Keyword Match: Key terms and technologies mentioned in job description</li>
+                </ul>
+            </div>
+            <h3 class="text-center mb-4">Analysis Results</h3>
+            <div class="table-responsive">
+                <table class="table results-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Resume</th>
+                            <th>Match Score</th>
+                            <th>Actions</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for result in results %}
+                        <tr id="resume-row-{{ loop.index }}">
+                            <td>{{ loop.index }}</td>
+                            <td>{{ result.filename }}</td>
+                            <td><span class="score-badge">{{ result.score|float|round(1) }}%</span></td>
+                            <td>
+                                <button class="btn btn-success btn-sm" onclick="updateStatus('{{ loop.index }}', 'accepted')">Accept</button>
+                                <button class="btn btn-danger btn-sm" onclick="updateStatus('{{ loop.index }}', 'rejected')">Reject</button>
+                            </td>
+                            <td id="status-{{ loop.index }}">Pending</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+
+    <script>
+    function updateStatus(index, status) {
+        const statusCell = document.getElementById('status-' + index);
+        const rowElement = document.getElementById('resume-row-' + index);
+        const actionButtons = rowElement.querySelector('td:nth-child(4)'); 
+        
+        //Check if already has a status
+        if (statusCell.innerHTML !== 'Pending') {
+            return; 
+        }
+        
+        if (status === 'accepted') {
+            statusCell.innerHTML = '<span class="text-success">Accepted</span>';
+            rowElement.classList.add('table-success');
+        } else {
+            statusCell.innerHTML = '<span class="text-danger">Rejected</span>';
+            rowElement.classList.add('table-danger');
+        }
+
+        // Hide the buttons
+        actionButtons.innerHTML = '';
+    }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

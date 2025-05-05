@@ -1,0 +1,27 @@
+Sarah Williams
+Backend Developer
+Email: sarah.w@email.com
+Phone: (555) 345-6789
+
+Education:
+- Bachelor's in Software Engineering
+- Python Certification from Stanford Online
+
+Skills:
+- Python (3 years)
+- Django, Flask
+- SQL (MySQL)
+- Basic Git
+- REST APIs
+- Unit Testing
+
+Experience:
+Backend Developer at WebServe (2020-Present)
+- Maintain Python web services
+- Database optimization
+- API development
+
+Junior Developer at CodeCorp (2019-2020)
+- Bug fixes and feature implementation
+- Basic API integrations
+- Code documentation

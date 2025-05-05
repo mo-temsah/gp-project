@@ -1,0 +1,29 @@
+Michael Chen
+Senior Software Engineer
+Email: michael.chen@email.com
+Phone: (555) 234-5678
+
+Education:
+- Ph.D. in Machine Learning, UC Berkeley
+- Bachelor's in Computer Science, UCLA
+
+Skills:
+- Advanced Python (10 years)
+- Deep Learning & AI (TensorFlow, PyTorch, Scikit-learn)
+- Flask, Django, FastAPI
+- Database Architecture (MySQL, PostgreSQL, MongoDB)
+- Git, Docker, Kubernetes
+- CI/CD (Jenkins, GitHub Actions)
+- RESTful API Design
+
+Experience:
+Lead ML Engineer at AI Solutions Inc. (2017-Present)
+- Led team of 8 ML engineers
+- Developed production-grade ML pipelines
+- Optimized large-scale data processing systems
+- Mentored junior developers and interns
+
+Senior Developer at DataTech (2015-2017)
+- Built Flask microservices architecture
+- Implemented automated testing frameworks
+- Reduced system latency by 60%

@@ -1,0 +1,27 @@
+John Smith
+Software Engineer
+Email: john.smith@email.com
+Phone: (555) 123-4567
+
+Education:
+- Master's in Computer Science, Stanford University
+- Bachelor's in Computer Science, MIT
+
+Skills:
+- Python, Flask, Django, FastAPI
+- Machine Learning (TensorFlow, PyTorch)
+- SQL (MySQL, PostgreSQL)
+- Git, Docker, AWS
+- REST API Development
+- Agile Methodologies
+
+Experience:
+Senior Software Engineer at Tech Corp (2018-Present)
+- Led development of ML-powered recommendation system
+- Managed team of 5 developers
+- Implemented CI/CD pipeline using Jenkins
+
+Software Engineer at StartupX (2015-2018)
+- Developed Flask-based web applications
+- Created RESTful APIs for mobile applications
+- Optimized database queries improving performance by 40%

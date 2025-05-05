@@ -1,0 +1,27 @@
+Alex Thompson
+Software Developer
+Email: alex.t@email.com
+Phone: (555) 678-9012
+
+Education:
+- Self-taught programmer
+- Online certifications in Python and Web Development
+
+Skills:
+- Python (2 years)
+- HTML/CSS/JavaScript
+- Basic Flask
+- SQLite
+- GitHub basics
+- API integration
+
+Experience:
+Junior Developer at StartupXYZ (2021-Present)
+- Maintain web applications
+- Bug fixes and testing
+- Basic feature implementation
+
+Freelance Developer (2020-2021)
+- Small web projects
+- WordPress customization
+- Basic automation scripts

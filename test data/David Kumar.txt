@@ -1,0 +1,28 @@
+David Kumar
+ML Engineer
+Email: david.k@email.com
+Phone: (555) 456-7890
+
+Education:
+- Master's in Computer Science, Georgia Tech
+- Bachelor's in Mathematics
+
+Skills:
+- Python (7 years)
+- Machine Learning & AI
+- TensorFlow, Keras
+- SQL and NoSQL databases
+- Git version control
+- Basic web development
+- Data visualization
+
+Experience:
+ML Engineer at DataCo (2018-Present)
+- Developed predictive models
+- Implemented ML pipelines
+- Data preprocessing and analysis
+
+Data Scientist at AnalyticsPro (2016-2018)
+- Statistical analysis
+- Feature engineering
+- Model optimization

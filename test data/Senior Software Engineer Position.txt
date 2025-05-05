@@ -1,0 +1,15 @@
+Senior Software Engineer Position
+We are seeking a skilled Senior Software Engineer with 5+ years of experience in Python development. 
+Required Skills:
+- Strong Python programming experience
+- Experience with Flask and Django frameworks
+- Database management (MySQL, PostgreSQL)
+- RESTful API development
+- Git version control
+- Machine Learning and AI experience
+- Bachelor's degree in Computer Science or related field
+Responsibilities:
+- Develop and maintain web applications
+- Lead technical projects and mentor junior developers
+- Implement machine learning solutions
+- Optimize application performance

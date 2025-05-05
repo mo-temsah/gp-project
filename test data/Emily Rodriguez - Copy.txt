@@ -1,0 +1,29 @@
+Emily Rodriguez
+Full Stack Engineer
+Email: emily.r@email.com
+Phone: (555) 567-8901
+
+Education:
+- Bachelor's in Computer Engineering
+- Multiple Coursera Certifications in Python and ML
+
+Skills:
+- Python (4 years)
+- JavaScript/Node.js
+- Flask, Express
+- PostgreSQL
+- Git, Docker
+- Basic ML knowledge
+- RESTful APIs
+
+Experience:
+Software Engineer at TechStart (2019-Present)
+- Full stack development
+- API design and implementation
+- Database management
+- Basic ML model deployment
+
+Web Developer at SiteBuilders (2018-2019)
+- Frontend development
+- Backend integrations
+- Performance optimization

@@ -1,0 +1,26 @@
+Jane Doe
+Full Stack Developer
+Email: jane.doe@email.com
+Phone: (555) 987-6543
+
+Education:
+- Bachelor's in Information Technology
+
+Skills:
+- JavaScript, React, Node.js
+- HTML, CSS
+- Basic Python
+- MongoDB
+- Git basics
+- AWS
+
+Experience:
+Web Developer at WebCo (2019-Present)
+- Frontend development using React
+- Built responsive websites
+- Implemented payment gateway integration
+
+Junior Developer at DevShop (2018-2019)
+- Created WordPress websites
+- Basic API integrations
+- UI/UX improvements
